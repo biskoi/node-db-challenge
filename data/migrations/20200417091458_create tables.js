@@ -42,8 +42,11 @@ exports.up = function(knex) {
          .references('resources.id')
          .notNullable()
          .onDelete('RESTRICT')
-         .onUpdate('CASCADE')
-   })
+         .onUpdate('CASCADE');
+      prsrc.unique(['project_id', 'resource_id'])
+   });
+
+
 
 };
 
