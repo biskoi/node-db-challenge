@@ -40,11 +40,23 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+  A relational database is a database that allows us to have columns in our tables that reference keys/columns from other tables. This lets us have multiple tables that reference each other, thus making it relational. Each row represents a record, and each collumn represents a certain attribute type or quality that is common to all records, such as an "age" column in a table concerned about persons. A table in a relational database can have a one-to-one relationship, one-to-many, or many-to-many. The term originally comes from a mathematical concept called relational algebra, a procedural query language.
+
+  SQL is a query language, and is heavily based on relational algebra. It is also the standard way for interacting with relational databases, but depending on the particular database you are working on, the language can vary. 
+
+  SQL contains subsets of commands that we use to interact with a database, such as Data Definition (DDL), Data Manipulation (DML), and Data Querying (DQL). 
+
 - [ ] Why do tables need a `primary key`?
+
+  A primary key lets us make each entry unique within the table, so we can consistently keep track of entries.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+  Foreign Key
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+  A third middleman table that takes in the foreign keys in two columns from the original two tables
 
 ## Minimum Viable Product
 

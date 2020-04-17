@@ -17,11 +17,15 @@ exports.up = function(knex) {
 
    .createTable('tasks', tsk => {
       tsk.increments('id', 255).primary().unique();
-      tsk.string('project_id', 255)
+      tsk.integer('project_id', 255)
          .notNullable()
          .references('projects.id')
          .onDelete('RESTRICT')
          .onUpdate('CASCADE');
+      tsk.string('project_description', 255)
+         .references('projects.description')
+         .onDelete('RESTRICT')
+         .onUpdate('CASCADE')
       tsk.string('description', 255).notNullable();
       tsk.string('notes', 255);
       tsk.integer('completed', 255).defaultTo(0);
@@ -29,12 +33,12 @@ exports.up = function(knex) {
 
    .createTable('project_resources', prsrc => {
       prsrc.increments('id', 255).primary();
-      prsrc.string('project_id', 255)
+      prsrc.integer('project_id', 255)
          .notNullable()
          .references('projects.id')
          .onDelete('RESTRICT')
          .onUpdate('CASCADE');
-      prsrc.string('resource_id', 255)
+      prsrc.integer('resource_id', 255)
          .references('resources.id')
          .notNullable()
          .onDelete('RESTRICT')
